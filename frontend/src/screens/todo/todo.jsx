@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Header from '../template/Header';
+import Header from '../../template/Header';
 
 export default class todo extends Component {
   render() {
