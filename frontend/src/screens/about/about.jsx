@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Header from '../template/Header';
+import Header from '../../components/template/Header';
 
 export default props => (
   <div>

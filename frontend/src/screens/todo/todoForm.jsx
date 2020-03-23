@@ -1,6 +1,6 @@
 import React from 'react';
 import Grid from '../../components/template/Grid';
-import IconButton from '../../components/template/IconButton';
+import IconButton from '../../components/Button/IconButton';
 
 const todoForm = (props) => {
 	return (

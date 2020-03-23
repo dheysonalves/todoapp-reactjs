@@ -1,5 +1,5 @@
 import React from 'react';
-import IconButton from '../../components/template/IconButton';
+import IconButton from '../../components/Button/IconButton';
 
 const todoList = (props) => {
 
