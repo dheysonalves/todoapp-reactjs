@@ -10,6 +10,7 @@ const todoForm = (props) => {
       </Grid>
 		<Grid cols="12 3 2">
 			<IconButton hide={false} onClick={props.handle} style="primary" icon="plus" />
+			<IconButton hide={false} onClick={props.handleSearch} style="info" icon="search" />
 		</Grid>
 		</div>
 	);

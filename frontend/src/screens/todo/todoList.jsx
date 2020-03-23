@@ -25,7 +25,7 @@ const todoList = (props) => {
 			<thead>
 				<tr>
 					<th>Description</th>
-					<th className="text-center">Actions</th>
+					<th className="text-center tableActions">Actions</th>
 				</tr>
 			</thead>
 			<tbody>
