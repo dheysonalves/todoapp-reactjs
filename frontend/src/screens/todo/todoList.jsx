@@ -1,11 +1,11 @@
 import React from 'react';
 import IconButton from '../../components/Button/IconButton';
+import {connect} from 'react-redux';
 
 const todoList = (props) => {
 
 	const renderRows = () => {
-		const list = props.list || [];
-
+		const list = props.list || []
 		return list.map(todo => (
 				<tr key={todo._id}>
 					<td className={todo.done ? 'markedAsDone' : ''}>
@@ -35,4 +35,8 @@ const todoList = (props) => {
 	);
 }
 
-export default todoList;
+const mapStateToProps = state => ({
+	list: state.todo.list
+});
+
+export default connect(mapStateToProps)(todoList);

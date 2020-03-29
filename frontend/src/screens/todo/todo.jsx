@@ -71,14 +71,13 @@ export default class todo extends Component {
       <Header name="Todo" small="Sign up"/>
 			<TodoForm
 			handle={this.handleApp}
-			description={this.state.description}
 			handleChange={this.handleChange}
 			handleSearch={this.handleSearch}
 			handleClear={this.handleClear}
 			/>
 			<TodoList
-			list={this.state.list}
-			handleRemove={this.handleRemove} handleMarkAsDone={this.handleMarkAsDone}
+			handleRemove={this.handleRemove}
+			handleMarkAsDone={this.handleMarkAsDone}
 			handleMarkAsPending={this.handleMarkAsPending}
 			/>
     </div>
