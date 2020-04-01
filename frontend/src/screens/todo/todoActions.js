@@ -16,3 +16,11 @@ export const search = () => {
 		payload: request
 	}
 }
+
+export const add = (description) => {
+	return dispatch => {
+		axios.post(URL, { description })
+			.then(response => dispatch({ type: 'TODO_ADDED', payload: response.data }))
+			.then(response => dispatch(search()))
+	}
+}

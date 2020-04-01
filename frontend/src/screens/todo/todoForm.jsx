@@ -4,7 +4,7 @@ import {bindActionCreators} from 'redux';
 
 import Grid from '../../components/template/Grid';
 import IconButton from '../../components/Button/IconButton';
-import { changeDescription, search } from './todoActions';
+import { changeDescription, search, add } from './todoActions';
 
 class todoForm extends Component {
 	constructor(props) {
@@ -19,21 +19,24 @@ class todoForm extends Component {
 	}
 
 keyHandler(e) {
+	const { add, search, description } = this.props;
 	if (e.key === 'Enter') {
-		e.shiftKey ? this.props.handleSearch() : this.props.handle();
+		e.shiftKey ? search() : add(description);
 	} else if (e.key === 'Escape') {
 		this.props.handleClear()
 	}
 }
 	render() {
+	const { add, search, description } = this.props;
+
 		return (
 		<div role='form' className='todoForm'>
 			<Grid cols="12 9 10">
         <input className="form-control" type="text" value={this.props.description} placeholder="Adicione uma tarefa" id="" onChange={this.props.changeDescription} onKeyUp={this.keyHandler}/>
       </Grid>
 		<Grid cols="12 3 2">
-			<IconButton hide={false} onClick={this.props.handle} style="primary" icon="plus" />
-			<IconButton hide={false} onClick={this.props.handleSearch} style="info" icon="search" />
+			<IconButton hide={false} onClick={() => add(description)} style="primary" icon="plus" />
+			<IconButton hide={false} onClick={() => search()} style="info" icon="search" />
 			<IconButton hide={false} onClick={this.props.handleClear} style="default" icon="close" />
 		</Grid>
 		</div>
@@ -47,6 +50,6 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch =>
-			bindActionCreators({changeDescription, search}, dispatch);
+			bindActionCreators({changeDescription, search, add}, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(todoForm);
