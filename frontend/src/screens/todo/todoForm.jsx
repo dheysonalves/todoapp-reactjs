@@ -13,6 +13,7 @@ class todoForm extends Component {
 	}
 
 	// Called as fast as it can!
+	// React has called the actionCreator.
 	componentWillMount() {
 		this.props.search();
 	}
