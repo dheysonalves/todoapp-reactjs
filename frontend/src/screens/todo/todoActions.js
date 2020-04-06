@@ -20,7 +20,7 @@ export const search = () => {
 export const add = (description) => {
 	return dispatch => {
 		axios.post(URL, { description })
-			.then(response => dispatch({ type: 'TODO_ADDED', payload: response.data }))
+			.then(response => dispatch({ type: 'TODO_CLEAR', payload: response.data }))
 			.then(response => dispatch(search()))
 	}
 }
@@ -43,4 +43,9 @@ export const remove = (todo) => {
 		axios.delete(`${URL}/${todo._id}`)
 			.then(resp => dispatch(search()))
 	}
+}
+
+export const clear = () => {
+	// TODO Refactor to a file with constants
+	return { type: 'TODO_CLEAR' }
 }
